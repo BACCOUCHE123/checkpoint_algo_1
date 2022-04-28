@@ -1,0 +1,37 @@
+ALGORITHM algorithm_name
+VAR
+
+     c: char;
+    SLength : INTEGER:= 1;
+    NbWords : INTEGER:= 1;
+    NbVowels,i,j,k:INTEGER;
+    sentence:STRING;
+    arret :boolean :=false;
+BEGIN
+
+WHILE (arret=false) DO
+   read(c)
+   sentence:=sentence+1;
+   SLength:=SLength+1;
+IF (c =".") THEN
+arret=True;
+END_WHILE
+   
+
+WHILE (j<SLength) DO
+    IF (sentence[j]=" ") THEN
+    NbWords:=NbWords+1
+    j:=j+1;
+    END_IF
+END_WHILE
+
+WHILE (k<SLength)
+IF (sentence[k]="a" OR sentence[k]="e" OR sentence[k]="u" OR sentence[k]="i" OR sentence[k]="o") THEN
+    NbVowels:=NbVowels+1;
+    k:=k+1;
+END_IF
+END_WHILE
+
+   write(SLength, NbWords, NbVowels);
+
+END
